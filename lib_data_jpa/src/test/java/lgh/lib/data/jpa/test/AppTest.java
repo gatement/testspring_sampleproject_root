@@ -13,7 +13,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import lgh.lib.data.jpa.test.app.TestApp;
+import lgh.lib.data.jpa.test.entity.Grade;
 import lgh.lib.data.jpa.test.entity.Student;
+import lgh.lib.data.jpa.test.repository.GradeRepository;
 import lgh.lib.data.jpa.test.repository.StudentRepository;
 
 @RunWith(SpringRunner.class)
@@ -22,13 +24,20 @@ import lgh.lib.data.jpa.test.repository.StudentRepository;
 public class AppTest {
 	@Autowired
 	private StudentRepository studentRepository;
+	@Autowired
+	private GradeRepository gradeRepository;
 
 	@Test
 	public void testStudentRepository() {
 		// insert data
-		studentRepository.save(new Student("Johnson", "Lau", 22));
-		studentRepository.save(new Student("Johnson", "Liu", 23));
-		studentRepository.save(new Student("Anne", "Zhang", 21));
+		gradeRepository.save(new Grade("Grade 1"));
+		gradeRepository.save(new Grade("Grade 2"));
+		gradeRepository.save(new Grade("Grade 3"));
+		Grade grade1 = gradeRepository.findOne((root, query, cb) -> cb.equal(root.get("name"), "Grade 1"));
+
+		studentRepository.save(new Student("Johnson", "Lau", 22, grade1));
+		studentRepository.save(new Student("Johnson", "Liu", 23, grade1));
+		studentRepository.save(new Student("Anne", "Zhang", 21, grade1));
 
 		// select all test
 		List<Student> allStudents = studentRepository.findAll();
