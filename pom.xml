@@ -71,5 +71,6 @@
         <module>lib_excel_extractor</module>
         
         <module>lib_data_jpa</module>
+        <module>lib_data_jdbc_template</module>
     </modules>
 </project>
