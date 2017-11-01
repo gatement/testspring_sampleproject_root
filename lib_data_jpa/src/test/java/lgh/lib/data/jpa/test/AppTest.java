@@ -29,6 +29,10 @@ public class AppTest {
 
 	@Test
 	public void testStudentRepository() {
+		// purge data
+		studentRepository.deleteAll();
+		gradeRepository.deleteAll();
+
 		// insert data
 		gradeRepository.save(new Grade("Grade 1"));
 		gradeRepository.save(new Grade("Grade 2"));
@@ -39,17 +43,17 @@ public class AppTest {
 		studentRepository.save(new Student("Johnson", "Liu", 23, grade1));
 		studentRepository.save(new Student("Anne", "Zhang", 21, grade1));
 
-		// select all test
+		// select all
 		List<Student> allStudents = studentRepository.findAll();
 		assertEquals("The student count shoud be match", 3, allStudents.size());
 
-		// select some test
+		// select some
 		List<Student> johnsons = studentRepository.findByFirstName("Johnson");
 		assertEquals("The student count shoud be match", 2, johnsons.size());
 		assertEquals("Johnson", johnsons.get(0).getFirstName());
 		assertEquals("Johnson", johnsons.get(1).getFirstName());
 
-		// select one test
+		// select one
 		Student student = studentRepository
 				.findOne((root, query, cb) -> cb.and(cb.equal(root.get("firstName"), "Johnson"),
 						cb.equal(root.get("lastName"), "Lau"), cb.lessThan(root.get("age"), 30)));
