@@ -12,8 +12,8 @@ import org.springframework.jdbc.core.RowMapper;
 public class BaseDao<T> {
 
 	@Resource
-	// @Autowired ?
-	protected JdbcTemplate jdbcTemplate;
+	// TODO: @Autowired ?
+	private JdbcTemplate jdbcTemplate;
 
 	@SuppressWarnings("unchecked")
 	private Class<T> entityClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass())
