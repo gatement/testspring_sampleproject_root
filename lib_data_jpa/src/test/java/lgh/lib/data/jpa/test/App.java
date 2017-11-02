@@ -1,11 +1,11 @@
-package lgh.lib.data.jdbc.template.test.app;
+package lgh.lib.data.jpa.test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TestApp {
+public class App {
 	public static void main(String[] args) {
-		SpringApplication.run(TestApp.class, args);
+		SpringApplication.run(App.class, args);
 	}
 }

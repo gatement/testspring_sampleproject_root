@@ -12,15 +12,14 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import lgh.lib.data.jpa.test.app.TestApp;
 import lgh.lib.data.jpa.test.entity.Grade;
 import lgh.lib.data.jpa.test.entity.Student;
 import lgh.lib.data.jpa.test.repository.GradeRepository;
 import lgh.lib.data.jpa.test.repository.StudentRepository;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TestApp.class)
-@EnableAutoConfiguration
+@SpringBootTest(classes = App.class)
+//@EnableAutoConfiguration
 public class AppTest {
 	@Autowired
 	private StudentRepository studentRepository;

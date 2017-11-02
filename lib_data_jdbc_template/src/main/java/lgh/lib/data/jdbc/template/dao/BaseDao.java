@@ -3,16 +3,14 @@ package lgh.lib.data.jdbc.template.dao;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
-import javax.annotation.Resource;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 public class BaseDao<T> {
 
-	@Resource
-	// TODO: @Autowired ?
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
 	@SuppressWarnings("unchecked")
