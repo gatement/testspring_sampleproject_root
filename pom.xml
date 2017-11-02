@@ -72,5 +72,6 @@
         
         <module>lib_data_jpa</module>
         <module>lib_data_jdbc_template</module>
+        <module>lib_data_mybatis</module>
     </modules>
 </project>

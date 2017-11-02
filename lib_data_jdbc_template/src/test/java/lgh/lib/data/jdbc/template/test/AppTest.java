@@ -20,7 +20,7 @@ public class AppTest {
 	private StudentService studentService;
 
 	@Test
-	public void testStudentService() throws Exception {
+	public void testStudentService() {
 		// insert 
 		studentService.create("Johnson", 22);
 		studentService.create("Anne", 20);
