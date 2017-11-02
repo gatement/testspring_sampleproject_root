@@ -33,6 +33,10 @@ public class BaseDao<T> {
 		return jdbcTemplate.queryForObject(sql, args, rowMapper);
 	}
 
+	public int update(String sql) {
+		return jdbcTemplate.update(sql);
+	}
+
 	public int update(String sql, Object... args) {
 		return jdbcTemplate.update(sql, args);
 	}

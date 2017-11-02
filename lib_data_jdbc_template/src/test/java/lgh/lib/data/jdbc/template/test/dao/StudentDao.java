@@ -9,7 +9,12 @@ import lgh.lib.data.jdbc.template.test.entity.Student;
 public class StudentDao extends BaseDao<Student> {
 
 	public Student findOneByName(String name) {
-		String sql = "select id, name from student where name=?";
+		String sql = "select id, name, age from student where name=?";
 		return findOne(sql, name);
+	}
+	
+	public void create(String name, int age) {
+		String sql = "insert into student(name, age) values(?, ?)";
+		update(sql);
 	}
 }

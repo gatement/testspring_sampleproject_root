@@ -15,4 +15,8 @@ public class StudentService {
 	public Student findOneByName(String name) {
 		return studentDao.findOneByName(name);
 	}
+	
+	public void create(String name, int age) {
+		studentDao.create(name, age);
+	}
 }
