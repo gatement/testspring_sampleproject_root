@@ -3,46 +3,26 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
     xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>lgh</groupId>
         <artifactId>testspring_sampleproject_root</artifactId>
         <version>0.0.1</version>
     </parent>
-
-    <artifactId>lib_excel_extractor</artifactId>
-    <name>lib_excel_extractor</name>
+    <artifactId>app_example</artifactId>
+    <name>app_example</name>
     <url>http://maven.apache.org</url>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
     <dependencies>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>3.17</version>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
+            <groupId>lgh</groupId>
+            <artifactId>lib_web</artifactId>
+            <version>0.0.1</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <layout>MODULE</layout>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
