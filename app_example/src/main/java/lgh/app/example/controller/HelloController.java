@@ -15,7 +15,7 @@ import lgh.app.example.dto.ResponseResult;
 @Controller
 @ResponseBody
 @RequestMapping("/hello")
-@Api(value = "Hello API", tags = "test")
+@Api(value = "测试Hello API", tags = "test")
 public class HelloController {
 	@ApiOperation(value = "我的测试api", notes = "第一个测试api", httpMethod = "GET", produces = "application/json")
 	@ApiResponse(code = 200, message = "success", response = ResponseResult.class)
