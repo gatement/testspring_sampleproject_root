@@ -35,4 +35,12 @@ public class HiControllerTest {
 				.contentType(MediaType.APPLICATION_JSON_UTF8).accept(MediaType.APPLICATION_JSON_UTF8))
 				.andExpect(status().isOk()).andExpect(content().string(Matchers.containsString("Johnson(123456)")));
 	}
+
+	@Test
+	public void testJsonParseException() throws Exception {
+		String content = "abc";
+		mvc.perform(MockMvcRequestBuilders.post("/hi/test").content(content).header("Authorization", "123456")
+				.contentType(MediaType.APPLICATION_JSON_UTF8).accept(MediaType.APPLICATION_JSON_UTF8))
+				.andExpect(status().is5xxServerError()).andExpect(content().string(Matchers.containsString("\"code\":1000")));
+	}
 }

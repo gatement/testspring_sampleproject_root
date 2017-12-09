@@ -41,7 +41,7 @@ public class HiController2Test {
 	}
 
 	@Test
-	public void getHello() throws Exception {
+	public void test1() throws Exception {
 		String content = mapper.writeValueAsString(new SampleRequestBody("Johnson", 20));
 		HttpHeaders headers = new HttpHeaders();
 		headers.set(HttpHeaders.CONTENT_TYPE, "application/json");

@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ResponseResult {
+public class SampleResponseResult {
 	private long id;
 	private String name;
 }

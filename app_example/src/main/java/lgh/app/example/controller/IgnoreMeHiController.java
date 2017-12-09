@@ -10,7 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
-import lgh.app.example.dto.ResponseResult;
+import lgh.app.example.dto.SampleResponseResult;
 import springfox.documentation.annotations.ApiIgnore;
 
 @Controller
@@ -20,10 +20,10 @@ import springfox.documentation.annotations.ApiIgnore;
 @ApiIgnore
 public class IgnoreMeHiController {
 	@ApiOperation(value = "我的测试api", notes = "第一个测试api", httpMethod = "GET", produces = "application/json")
-	@ApiResponse(code = 200, message = "success", response = ResponseResult.class)
+	@ApiResponse(code = 200, message = "success", response = SampleResponseResult.class)
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
-	public ResponseResult hello(
+	public SampleResponseResult hello(
 			@ApiParam(value = "用户名称", required = true) @RequestParam(name = "myname", defaultValue = "MyDefaultName") String name) {
-		return new ResponseResult(System.currentTimeMillis(), name);
+		return new SampleResponseResult(System.currentTimeMillis(), name);
 	}
 }

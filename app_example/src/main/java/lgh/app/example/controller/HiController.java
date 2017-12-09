@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
-import lgh.app.example.dto.ResponseResult;
+import lgh.app.example.dto.SampleResponseResult;
 import lgh.app.example.dto.SampleRequestBody;
 
 @RestController
@@ -17,9 +17,9 @@ import lgh.app.example.dto.SampleRequestBody;
 @Api(value = "测试API2", tags = "test")
 public class HiController {
 	@ApiOperation(value = "我的测试api", notes = "第一个测试api", produces = "application/json")
-	@ApiResponse(code = 200, message = "success", response = ResponseResult.class)
+	@ApiResponse(code = 200, message = "success", response = SampleResponseResult.class)
 	@PostMapping("/test")
-	public ResponseResult test1(@RequestHeader("Authorization") String auth, @RequestBody SampleRequestBody requestBody) {
-		return new ResponseResult(System.currentTimeMillis(), requestBody.getName() + "(" + auth + ")");
+	public SampleResponseResult test1(@RequestHeader("Authorization") String auth, @RequestBody SampleRequestBody requestBody) {
+		return new SampleResponseResult(System.currentTimeMillis(), requestBody.getName() + "(" + auth + ")");
 	}
 }
